@@ -17,12 +17,12 @@ export const RegisterInput: FC<RegisterInputProps> = ({
   type,
   placeholder,
 }) => (
-  <InputGroup className={className}>
-    <InputGroup.Text>
-      <Icon className="fs-2 opacity-50" />
+  <InputGroup className={`opacity-50 ${className}`}>
+    <InputGroup.Text className="bg-white border-end-0 pe-0">
+      <Icon className="fs-2" />
     </InputGroup.Text>
     <FloatingLabel label={label}>
-      <Form.Control type={type} placeholder={placeholder} />
+      <Form.Control className="border-start-0" type={type} placeholder={placeholder} />
     </FloatingLabel>
   </InputGroup>
 );

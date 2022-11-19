@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
-:root {
-  font-family: Roboto, Inter, Avenir, Helvetica, Arial, sans-serif;
+#root {
+  font-family: Encode Sans, Roboto, Inter, Avenir, Helvetica, Arial, sans-serif;
 }
 
 .social-icon-wrapper {
@@ -17,4 +19,12 @@
   opacity: 50%;
   display: flex;
   align-items: center;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.font-khula {
+  font-family: Khula;
 }
