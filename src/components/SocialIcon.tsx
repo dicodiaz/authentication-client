@@ -8,7 +8,7 @@ type SocialIcon = ClassNameProp & {
 };
 
 export const SocialIcon: FC<SocialIcon> = ({ className, Icon }) => (
-  <Col className={`social-icon-wrapper fs-2 ${className}`}>
+  <Col className={`social-icon-wrapper fs-2${className ? ` ${className}` : ''}`}>
     <Icon />
   </Col>
 );

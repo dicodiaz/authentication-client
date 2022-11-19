@@ -17,7 +17,7 @@ export const RegisterInput: FC<RegisterInputProps> = ({
   type,
   placeholder,
 }) => (
-  <InputGroup className={`opacity-50 ${className}`}>
+  <InputGroup className={`opacity-50${className ? ` ${className}` : ''}`}>
     <InputGroup.Text className="bg-white border-end-0 pe-0">
       <Icon className="fs-2" />
     </InputGroup.Text>

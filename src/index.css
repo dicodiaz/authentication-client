@@ -21,10 +21,32 @@
   align-items: center;
 }
 
-.fw-600 {
-  font-weight: 600;
+.font-khula {
+  font-family: Khula !important;
 }
 
-.font-khula {
-  font-family: Khula;
+@media screen and (min-width: 768px) {
+  .border-md {
+    border: 1px solid rgb(222, 226, 230) !important;
+  }
+
+  .rounded-md-5 {
+    border-radius: 32px !important ;
+  }
+
+  .fw-md-light {
+    font-weight: 300 !important;
+  }
+
+  .fw-md-normal {
+    font-weight: normal !important;
+  }
+
+  .td-md-underline {
+    text-decoration: underline !important;
+  }
+
+  .position-md-static {
+    position: static !important;
+  }
 }
