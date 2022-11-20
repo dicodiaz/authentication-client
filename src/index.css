@@ -25,6 +25,21 @@
   font-family: Khula !important;
 }
 
+.text-input:focus {
+  box-shadow: none;
+  border-color: rgb(206, 212, 218);
+}
+
+.rounded-start-3-and-half {
+  border-top-left-radius: 12px !important;
+  border-bottom-left-radius: 12px !important;
+}
+
+.rounded-end-3-and-half {
+  border-top-right-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+}
+
 @media screen and (min-width: 768px) {
   .border-md {
     border: 1px solid rgb(222, 226, 230) !important;

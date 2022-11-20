@@ -2,12 +2,12 @@ import { FC } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { MdEmail, MdLock } from 'react-icons/md';
 import { ClassNameProp } from '../types';
-import { RegisterInput } from './RegisterInput';
+import { TextInput } from './TextInput';
 
 export const RegisterForm: FC<ClassNameProp> = ({ className }) => (
   <Form className={className}>
-    <RegisterInput Icon={MdEmail} label="Email" type="email" placeholder="name@example.com" />
-    <RegisterInput
+    <TextInput Icon={MdEmail} label="Email" type="email" placeholder="name@example.com" />
+    <TextInput
       className="mt-3"
       Icon={MdLock}
       label="Password"
