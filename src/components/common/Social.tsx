@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Row } from 'react-bootstrap';
 import { FaFacebookSquare, FaGithub, FaGoogle, FaTwitter } from 'react-icons/fa';
-import { ClassNameProp } from '../types';
+import { ClassNameProp } from '../../utils/types';
 import { SocialIcon } from './SocialIcon';
 
 const socialIcons = [FaGoogle, FaFacebookSquare, FaTwitter, FaGithub];

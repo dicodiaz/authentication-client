@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { ClassNameProp } from '../types';
+import { ClassNameProp } from '../../utils/types';
 
 export const Footer: FC<ClassNameProp> = ({ className }) => (
   <Container className={`py-1${className ? ` ${className}` : ''}`} as="footer" fluid>

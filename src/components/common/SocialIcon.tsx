@@ -1,13 +1,13 @@
 import { FC } from 'react';
 import { Col } from 'react-bootstrap';
 import { IconType } from 'react-icons';
-import { ClassNameProp } from '../types';
+import { ClassNameProp } from '../../utils/types';
 
-type SocialIcon = ClassNameProp & {
+type SocialIconProps = ClassNameProp & {
   Icon: IconType;
 };
 
-export const SocialIcon: FC<SocialIcon> = ({ className, Icon }) => (
+export const SocialIcon: FC<SocialIconProps> = ({ className, Icon }) => (
   <Col className={`social-icon-wrapper fs-2${className ? ` ${className}` : ''}`}>
     <Icon />
   </Col>

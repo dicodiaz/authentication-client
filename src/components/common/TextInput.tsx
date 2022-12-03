@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { FloatingLabel, Form, InputGroup } from 'react-bootstrap';
 import { IconType } from 'react-icons';
-import { ClassNameProp } from '../types';
+import { ClassNameProp } from '../../utils/types';
 
 type TextInputProps = ClassNameProp & {
   Icon: IconType;
