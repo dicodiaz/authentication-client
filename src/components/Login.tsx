@@ -1,9 +1,13 @@
 import { FC } from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
-import logo from '../assets/devChallenges.svg';
+import logo from '~/assets/devChallenges.svg';
 import { Footer, LinkFooter, LoginForm, Social, Title } from './common';
 
-export const Login: FC = () => {
+type LoginProps = {
+  onLogin: () => void;
+};
+
+export const Login: FC<LoginProps> = ({ onLogin }) => {
   const titleText = 'Login';
   const formButtonText = 'Login';
   const linkFooterText = "Don't have an account yet?";
@@ -15,7 +19,7 @@ export const Login: FC = () => {
           <div className="px-md-5 py-md-5 border-md rounded-md-5">
             <Image src={logo} fluid />
             <Title className="mt-4" text={titleText} />
-            <LoginForm className="mt-4" buttonText={formButtonText} />
+            <LoginForm className="mt-4" buttonText={formButtonText} onSubmit={onLogin} />
             <Social className="mt-4" />
             <LinkFooter className="mt-4" text={linkFooterText} linkTo="/" linkText="Register" />
           </div>

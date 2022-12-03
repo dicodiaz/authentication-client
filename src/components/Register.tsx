@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
-import logo from '../assets/devChallenges.svg';
+import logo from '~/assets/devChallenges.svg';
 import { Footer, LinkFooter, LoginForm, Social, Subtitle, Title } from './common';
 
 export const Register: FC = () => {
