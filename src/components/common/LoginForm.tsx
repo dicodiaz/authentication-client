@@ -1,30 +1,32 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { Alert, Button, Form } from 'react-bootstrap';
 import { MdEmail, MdLock } from 'react-icons/md';
-import { login } from '~/utils/auth';
 import { useTextInput } from '~/utils/hooks';
-import { ClassNameProp } from '~/utils/types';
+import { ClassNameProp, LoginInput } from '~/utils/types';
 import { TextInput } from './TextInput';
 
 type LoginFormProps = ClassNameProp & {
   buttonText: string;
-  onSubmit?: () => void;
+  onSubmit?: (input: LoginInput) => void;
+  error?: boolean;
+  errorText?: string;
+  buttonDisabled?: boolean;
 };
 
-export const LoginForm: FC<LoginFormProps> = ({ className, buttonText, onSubmit }) => {
+export const LoginForm: FC<LoginFormProps> = ({
+  className,
+  buttonText,
+  onSubmit,
+  error,
+  errorText,
+  buttonDisabled,
+}) => {
   const { value: email, onChange: onEmailChange } = useTextInput('');
   const { value: password, onChange: onPasswordChange } = useTextInput('');
-  const [error, setError] = useState(false);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    setError(false);
-    const success = await login({ email, password });
-    if (success) {
-      onSubmit?.();
-    } else {
-      setError(true);
-    }
+    onSubmit?.({ email, password });
   };
 
   return (
@@ -46,10 +48,14 @@ export const LoginForm: FC<LoginFormProps> = ({ className, buttonText, onSubmit 
         value={password}
         onChange={onPasswordChange}
       />
-      <Button className="mt-3 w-100" type="submit">
+      <Button className="mt-3 w-100" type="submit" disabled={buttonDisabled}>
         {buttonText}
       </Button>
-      {error && <Alert variant="danger">Login failed</Alert>}
+      {error && (
+        <Alert className="mt-2" variant="danger">
+          {errorText}
+        </Alert>
+      )}
     </Form>
   );
 };

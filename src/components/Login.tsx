@@ -1,6 +1,8 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
 import logo from '~/assets/devChallenges.svg';
+import { login } from '~/utils/auth';
+import { LoginInput } from '~/utils/types';
 import { Footer, LinkFooter, LoginForm, Social, Title } from './common';
 
 type LoginProps = {
@@ -8,9 +10,21 @@ type LoginProps = {
 };
 
 export const Login: FC<LoginProps> = ({ onLogin }) => {
+  const [error, setError] = useState(false);
+
   const titleText = 'Login';
   const formButtonText = 'Login';
   const linkFooterText = "Don't have an account yet?";
+
+  const handleLogin = async ({ email, password }: LoginInput) => {
+    setError(false);
+    const success = await login({ email, password });
+    if (success) {
+      onLogin();
+    } else {
+      setError(true);
+    }
+  };
 
   return (
     <Container className="vh-100 py-2 d-flex flex-column justify-content-sm-center" as="main" fluid>
@@ -19,7 +33,13 @@ export const Login: FC<LoginProps> = ({ onLogin }) => {
           <div className="px-md-5 py-md-5 border-md rounded-md-5">
             <Image src={logo} fluid />
             <Title className="mt-4" text={titleText} />
-            <LoginForm className="mt-4" buttonText={formButtonText} onSubmit={onLogin} />
+            <LoginForm
+              className="mt-4"
+              buttonText={formButtonText}
+              onSubmit={handleLogin}
+              error={error}
+              errorText="Login Failed"
+            />
             <Social className="mt-4" />
             <LinkFooter className="mt-4" text={linkFooterText} linkTo="/" linkText="Register" />
           </div>
